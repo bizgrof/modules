@@ -1,5 +1,6 @@
 "use strict";
-var height = {
+var arr = 123;
+var heightItem = {
 	/*
 	 * Получает высоту всех элементов переданного класса
 	 * @param (string) element, элемент которые передает в функцию, ex. ".product__item"
