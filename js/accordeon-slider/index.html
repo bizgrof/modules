@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+	<script src="common.js"></script>	
+
+	<style>
+		* {margin: 0; padding: 0;}
+		
+		body {background: #ccc;}
+		
+		.wrapper {width: 867px; margin: 0 auto; background: #fff}
+
+
+		.slider {
+			position: relative;
+			overflow: hidden;
+			height: 485px;
+			color: #fff;
+		}
+
+		.slide {
+			position: relative;
+			width: 100%;
+			top: 0;
+			transition: .4s;
+		}
+
+		.slide > img {
+			width: 100%;
+			position: absolute;
+			cursor: pointer;
+		}
+
+		.slide__title {
+			display: none;
+			position: absolute;
+			top: 30px;
+			left: 30px;
+			font-size: 44px;
+			color: #fff;
+			z-index: 100;
+		}
+
+		.slide__hover {
+			opacity: 0;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: rgba(0,0,0, .7);
+			width: 26%;
+			height: 485px;
+			transition: .3s
+		}
+
+		.image__copy {
+			cursor: pointer;
+			position: absolute;
+			bottom: 35%;
+			left: 33%;
+		}
+		
+		.slide__info {
+			position: absolute;
+			top: 35%;
+    		text-align: center;
+    		width: 100%;
+		}
+		
+		.slide__link {
+			color: #fff;
+			text-decoration: none;
+			display: block;
+		}
+		
+		.slide__toolbar {
+			position: absolute;
+		    top: 20px;
+		    right: 20px;
+		    z-index: 5;
+		    display: none;
+		}
+
+		.slide__close, .slide__fullscreen {
+			cursor: pointer;
+		}
+		.slide__close {
+		    font-size: 30px;
+		    margin-bottom: 25px;
+		}
+
+		.slide__overlay {
+			width: 100%;
+			height: 100%;
+			background: rgba(0,0,0, 0.5);
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			display: none;
+			z-index: 1;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="slider">
+
+			<!-- Оверлей -->
+			<div class="slide__overlay"></div>
+
+			<!-- Панель упрваления -->
+			<div class="slide__toolbar">
+				<!-- Закрыть -->
+				<div class="slide__close">
+					<img src="./images/close.png" alt="Close slide">
+				</div>
+
+				<!-- Полный экран -->
+				<div class="slide__fullscreen">
+					<a href="#"><img src="./images/fullscreen.png" alt="Fullscreen"></a>
+				</div>
+			</div>
+			
+			<!-- Слайд -->
+			<div class="slide" data-slider="0" data-href="./images/1.jpg">
+				<div class="slide__title">1</div>
+				<img src="./images/1.jpg" alt="1.jpg">	
+				<div class="slide__hover">
+					<div class="slide__info">
+						<a href="#" class="slide__link">Кухня Зетта (Зетта)</a>
+						<span>Модель "Санта плюс"</span>
+					</div>
+					<a class="image__copy" href="http://google.com">
+						<img src="./images/copy.png" alt="{title}">
+					</a>
+				</div>
+			</div>
+
+			<!-- Слайд -->
+			<div class="slide" data-slider="1" data-href="./images/2.jpg">
+				<div class="slide__title">2</div>
+				<img src="./images/2.jpg" alt="1.jpg">
+				<div class="slide__hover">
+					<div class="slide__info">
+						<a href="#" class="slide__link">Кухня Зетта (Зетта)</a>
+						<span>Модель "Санта плюс"</span>
+					</div>
+					<a class="image__copy" href="http://google.com">
+						<img src="./images/copy.png" alt="{title}">
+					</a>
+				</div>	
+			</div>
+			
+			<!-- Слайд -->
+			<div class="slide" data-slider="2" data-href="./images/3.jpg">
+				<div class="slide__title">3</div>
+				<img src="./images/3.jpg" alt="1.jpg">
+				<div class="slide__hover">
+					<div class="slide__info">
+						<a href="#" class="slide__link">Кухня Зетта (Зетта)</a>
+						<span>Модель "Санта плюс"</span>
+					</div>
+					<a class="image__copy" href="http://google.com">
+						<img src="./images/copy.png" alt="{title}">
+					</a>
+				</div>	
+			</div>
+
+			<!-- Слайд -->
+			<div class="slide" data-slider="3" data-href="./images/4.jpg">
+				<div class="slide__title">4</div>
+				<img src="./images/4.jpg" alt="1.jpg">
+				<div class="slide__hover">
+					<div class="slide__info">
+						<a href="#" class="slide__link">Кухня Зетта (Зетта)</a>
+						<span>Модель "Санта плюс"</span>
+					</div>
+					<a class="image__copy" href="http://google.com">
+						<img src="./images/copy.png" alt="{title}">
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="slider">
+
+			<!-- Оверлей -->
+			<div class="slide__overlay"></div>
+
+			<!-- Панель упрваления -->
+			<div class="slide__toolbar">
+				<!-- Закрыть -->
+				<div class="slide__close">
+					<img src="./images/close.png" alt="Close slide">
+				</div>
+
+				<!-- Полный экран -->
+				<div class="slide__fullscreen">
+					<a href="#"><img src="./images/fullscreen.png" alt="Fullscreen"></a>
+				</div>
+			</div>
+			
+			<!-- Слайд -->
+			<div class="slide" data-slider="0" data-href="./images/1.jpg">
+				<div class="slide__title">1</div>
+				<img src="./images/1.jpg" alt="1.jpg">	
+				<div class="slide__hover">
+					<div class="slide__info">
+						<a href="#" class="slide__link">Кухня Зетта (Зетта)</a>
+						<span>Модель "Санта плюс"</span>
+					</div>
+					<a class="image__copy" href="http://google.com">
+						<img src="./images/copy.png" alt="{title}">
+					</a>
+				</div>
+			</div>
+
+			<!-- Слайд -->
+			<div class="slide" data-slider="1" data-href="./images/2.jpg">
+				<div class="slide__title">2</div>
+				<img src="./images/2.jpg" alt="1.jpg">
+				<div class="slide__hover">
+					<div class="slide__info">
+						<a href="#" class="slide__link">Кухня Зетта (Зетта)</a>
+						<span>Модель "Санта плюс"</span>
+					</div>
+					<a class="image__copy" href="http://google.com">
+						<img src="./images/copy.png" alt="{title}">
+					</a>
+				</div>	
+			</div>
+			
+			<!-- Слайд -->
+			<div class="slide" data-slider="2" data-href="./images/3.jpg">
+				<div class="slide__title">3</div>
+				<img src="./images/3.jpg" alt="1.jpg">
+				<div class="slide__hover">
+					<div class="slide__info">
+						<a href="#" class="slide__link">Кухня Зетта (Зетта)</a>
+						<span>Модель "Санта плюс"</span>
+					</div>
+					<a class="image__copy" href="http://google.com">
+						<img src="./images/copy.png" alt="{title}">
+					</a>
+				</div>	
+			</div>
+
+			<!-- Слайд -->
+			<div class="slide" data-slider="3" data-href="./images/4.jpg">
+				<div class="slide__title">4</div>
+				<img src="./images/4.jpg" alt="1.jpg">
+				<div class="slide__hover">
+					<div class="slide__info">
+						<a href="#" class="slide__link">Кухня Зетта (Зетта)</a>
+						<span>Модель "Санта плюс"</span>
+					</div>
+					<a class="image__copy" href="http://google.com">
+						<img src="./images/copy.png" alt="{title}">
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+
+
+	
+
+</body>
+</html>
